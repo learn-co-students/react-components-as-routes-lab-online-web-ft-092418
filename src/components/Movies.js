@@ -6,13 +6,14 @@ const Movies = () => {
     <div>
         <h1>Movies Page</h1>
           {movies.map(
-            (m) => 
-            <div>
+            (m, index) => 
+            <div key={index}>
                 <h3>Title: {m.title}, Time: {m.time}</h3>
+                  <h4>Genres</h4>
                 <ul>
-                  {/* <li>{m.genres.map((g) =>
-                    console.log(g.name)
-                    )}</li> */}
+                  {m.genres.map((g, index) =>
+                  <li key={index}>{g}</li>
+                  )}
                 </ul>
             </div>
           )}
@@ -22,5 +23,3 @@ const Movies = () => {
 
 export default Movies;
 
-
-//need to get the genres to show
